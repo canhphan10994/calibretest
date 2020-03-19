@@ -1,0 +1,51 @@
+$color: (
+  white: #ffffff,
+  gray-1: #f3f3f3,
+  gray-2: #e8e8e8,
+  gray-3: #cccccc,
+  black: #2b2b2b
+);
+
+@function color($color-name) {
+  @return map-get($color, $color-name);
+}
+
+.text-white {
+  color: color(white);
+}
+
+.text-gray-1 {
+  color: color(gray-1);
+}
+
+.text-gray-2 {
+  color: color(gray-2);
+}
+
+.text-gray-3 {
+  color: color(gray-3);
+}
+
+.text-black {
+  background-color: color(black);
+}
+
+.bg-white {
+  background-color: color(white);
+}
+
+.bg-gray-1 {
+  background-color: color(gray-1);
+}
+
+.bg-gray-2 {
+  background-color: color(gray-2);
+}
+
+.bg-gray-3 {
+  background-color: color(gray-3);
+}
+
+.bg-black {
+  background-color: color(black);
+}

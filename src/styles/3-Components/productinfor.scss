@@ -1,0 +1,148 @@
+.productInformation {
+  width: 448px;
+  background: white;
+  h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    span {
+      float: right;
+    }
+  }
+
+  .productInformation__head {
+    border-bottom: solid color(gray-2) 1px;
+
+    p {
+      margin: 8px 0 8px 0;
+    }
+  }
+  > div {
+    padding: 14px 0;
+    border-bottom: solid color(gray-2) 1px;
+    > div {
+      display: none;
+      margin-top: 14px;
+      font-size: 15px;
+    }
+    .productShow {
+      display: block;
+    }
+  }
+
+  .productInformation__detail {
+    li {
+      font-weight: 600;
+      margin-bottom: 14px;
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .productInformation__adding {
+    .adding__button {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 20px;
+      div {
+        border: solid color(gray-3) 1px;
+        display: flex;
+        img {
+          padding: 13px;
+          background-color: color(gray-2);
+        }
+        a {
+          padding: 15px;
+          display: flex;
+          align-items: center;
+          font-weight: 600;
+        }
+      }
+      .addToBag > a {
+        background-color: black;
+        color: color(gray-3);
+      }
+
+      .addToBag > a:hover {
+        background-color: color(gray-3);
+        color: black;
+      }
+
+      .addWistList > a {
+        background-color: color(gray-3);
+        color: black;
+      }
+
+      .addWistList > a:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    > a {
+      color: black;
+      display: block;
+      text-align: center;
+      text-decoration: underline;
+    }
+  }
+
+  .productInformation__socials {
+    figure {
+      text-align: center;
+      img {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .productInformation__more {
+    display: flex;
+    padding: 0;
+    div {
+      padding: 20px 20px;
+      margin: 0;
+      font-size: 15;
+      p {
+        text-align: center;
+        font-weight: 600;
+      }
+      a {
+        text-align: center;
+        color: black;
+        font-weight: 600;
+      }
+    }
+    .product-viewmore {
+      border-right: solid color(gray-2) 1px;
+      border-left: solid color(gray-2) 1px;
+    }
+  }
+}
+
+.productImages {
+  width: 452px;
+  margin-right: 40px;
+  .imageShow {
+    width: 452px;
+    height: 472px;
+  }
+  .imageList {
+    margin-top: 20px;
+    width: 452px;
+  }
+  > a {
+    text-align: center;
+    margin: 15px auto;
+    display: block;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: black;
+  }
+}
+
+.product-wrap {
+  display: flex;
+  justify-content: center;
+  background: white;
+}

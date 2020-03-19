@@ -1,0 +1,347 @@
+.billing-wrap {
+  max-width: 960px;
+  margin: auto;
+}
+
+.billing-wrap > h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 45px;
+}
+
+.billing-wrap > div {
+  margin-top: 20px;
+  background: color(gray-2);
+}
+
+.billing-wrap .track__line {
+  background: none;
+}
+
+.billing-wrap .track__line ul li:nth-child(3)::after {
+  background: black;
+}
+
+.billing-wrap .order_summary .order_list {
+  border-bottom: solid 1px color(gray-3);
+}
+
+.billing-wrap .order_summary .order_list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.billing-wrap .order_summary .order_list table th {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 15px 0;
+  border-bottom: solid 1px color(gray-3);
+  text-transform: uppercase;
+}
+
+.billing-wrap .order_summary .order_list table th:nth-child(1) {
+  text-align: start;
+  padding-left: 20px;
+}
+
+.billing-wrap .order_summary .order_list table td {
+  text-align: center;
+  font-size: 13px;
+}
+
+.billing-wrap .order_summary .order_list table .order_item-des {
+  display: flex;
+  margin-left: 20px;
+  padding: 14px 0;
+}
+
+.billing-wrap .order_summary .order_list table .order_item-des img {
+  width: 69px;
+  height: 69px;
+}
+
+.billing-wrap .order_summary .order_list table .order_item-des .order_item-des-main {
+  max-width: 172px;
+  text-align: start;
+  margin-left: 10px;
+}
+
+.billing-wrap .order_summary .order_totals {
+  display: flex;
+  padding: 20px 16px 20px 16px;
+  justify-content: space-between;
+}
+
+.billing-wrap .order_summary .order_totals a {
+  font-size: 12px;
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.billing-wrap .order_summary .order_totals .order_totals-price {
+  display: flex;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.billing-wrap .order_summary .order_totals .order_totals-price p {
+  margin-right: 40px;
+}
+
+.billing-wrap .billing_review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 14px 20px;
+}
+
+.billing-wrap .billing_review h2 {
+  font-size: 17px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.billing-wrap .billing_review p {
+  font-size: 12px;
+}
+
+.billing-wrap .billing_review a {
+  color: black;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.billing-wrap .billing_review .billing_adress {
+  display: flex;
+  flex-direction: column;
+}
+
+.billing-wrap .billing_review .billing_adress a {
+  margin-top: auto;
+}
+
+.billing-wrap .delivery-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 14px 20px;
+}
+
+.billing-wrap .delivery-wrap h2 {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.billing-wrap .delivery-wrap p {
+  font-size: 12px;
+  margin: 15px 0;
+}
+
+.billing-wrap .delivery-wrap a {
+  color: black;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.billing-wrap .payment__form {
+  margin-bottom: 14px;
+  padding: 14px 20px;
+}
+
+.billing-wrap .payment__form h2 {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.billing-wrap .payment__form form {
+  display: flex;
+  margin-top: 14px;
+  flex-direction: column;
+}
+
+.billing-wrap .payment__form form label {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.billing-wrap .payment__form form input,
+.billing-wrap .payment__form form select {
+  display: block;
+  height: 34px;
+}
+
+.billing-wrap .payment__form form .cardName {
+  width: 342px;
+  margin-top: 11px;
+}
+
+.billing-wrap .payment__form form .cardNumber {
+  display: flex;
+}
+
+.billing-wrap .payment__form form .cardNumber input {
+  width: 75px;
+  margin-right: 14px;
+  margin-top: 11px;
+}
+
+.billing-wrap .payment__form form .expiration-wrap {
+  display: flex;
+  align-items: flex-end;
+}
+
+.billing-wrap .payment__form form .expiration-wrap select {
+  margin-top: 11px;
+}
+
+.billing-wrap .payment__form form .expiration-wrap input {
+  width: 75px;
+  margin-top: 11px;
+}
+
+.billing-wrap .payment__form form .expiration-wrap .exp__months select {
+  width: 164px;
+}
+
+.billing-wrap .payment__form form .expiration-wrap .exp__years {
+  margin: auto 15px;
+}
+
+.billing-wrap .payment__form form .expiration-wrap .exp__years select {
+  width: 75px;
+}
+
+.billing-wrap .payment__form form .card__secure {
+  display: flex;
+  align-items: center;
+  max-width: 342px;
+}
+
+.billing-wrap .payment__form form .card__secure input {
+  margin-right: 30px;
+}
+
+.billing-wrap > a {
+  display: flex;
+  margin-bottom: 40px;
+  padding: 14px 20px;
+  max-width: 220px;
+  margin-left: auto;
+  background: black;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: all 0.3s ease-in-out;
+  border: solid 1px color(gray-3);
+  font-weight: 600;
+}
+
+.billing-wrap > a:hover {
+  background-color: color(gray-2);
+  color: black;
+}
+
+.billing-wrap .card__secure {
+  position: relative;
+}
+
+.billing-wrap .card__secure input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.billing-wrap .card__secure .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: white;
+  border: solid 1px color(gray-3);
+}
+
+.billing-wrap .card__secure .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  bottom: 5px;
+  width: 3px;
+  height: 9px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.billing-wrap .card__secure input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.order_summary .order_list {
+  border-bottom: solid 1px color(gray-3);
+}
+
+.order_summary .order_list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order_summary .order_list table th {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 15px 0;
+  border-bottom: solid 1px color(gray-3);
+  text-transform: uppercase;
+}
+
+.order_summary .order_list table th:nth-child(1) {
+  text-align: start;
+  padding-left: 20px;
+}
+
+.order_summary .order_list table td {
+  text-align: center;
+  font-size: 13px;
+}
+
+.order_summary .order_list table .order_item-des {
+  display: flex;
+  margin-left: 20px;
+  padding: 14px 0;
+}
+
+.order_summary .order_list table .order_item-des img {
+  width: 69px;
+  height: 69px;
+}
+
+.order_summary .order_list table .order_item-des .order_item-des-main {
+  max-width: 172px;
+  text-align: start;
+  margin-left: 10px;
+}
+
+.order_summary .order_totals {
+  display: flex;
+  padding: 20px 16px 20px 16px;
+  justify-content: space-between;
+}
+
+.order_summary .order_totals a {
+  font-size: 12px;
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.order_summary .order_totals .order_totals-price {
+  display: flex;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.order_summary .order_totals .order_totals-price p {
+  margin-right: 40px;
+}

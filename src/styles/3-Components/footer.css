@@ -1,0 +1,66 @@
+footer {
+  background: color(gray-2);
+  padding: 41px 220px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "address links links contact";
+  text-transform: uppercase;
+}
+
+footer .footer__address {
+  grid-area: address;
+}
+
+footer .footer__address h3 {
+  font-size: 15px;
+  margin-bottom: 23px;
+}
+
+footer .footer__links {
+  grid-area: links;
+}
+
+footer .footer__links ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 167px;
+}
+
+footer .footer__links ul a {
+  color: black;
+  line-height: 25px;
+  font-size: 13px;
+}
+
+footer .footer__contact {
+  grid-area: contact;
+}
+
+footer .footer__contact form {
+  margin: 15px 0 40px 0;
+}
+
+footer .footer__contact form input {
+  display: block;
+  margin-bottom: 15px;
+  padding: 9px;
+}
+
+footer .footer__contact form a {
+  color: black;
+  border: solid black 1px;
+  padding: 5px 20px;
+  font-size: 13px;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .footer__contact form a:hover {
+  background-color: black;
+  color: white;
+}
+
+footer .footer__contact form .socials img {
+  display: flex;
+  justify-content: space-between;
+}

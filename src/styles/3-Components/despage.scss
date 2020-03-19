@@ -1,0 +1,42 @@
+.desPage {
+  max-width: 1440px;
+  background: white;
+  margin: auto;
+  position: relative;
+  header {
+    margin-bottom: 30px;
+    .topNav-wrap {
+      padding: 25px 0;
+    }
+    .mAccount {
+      position: relative;
+      .overlay-account {
+        position: absolute;
+        top: 120%;
+        left: -240px;
+      }
+    }
+    .wList {
+      position: relative;
+      .overlay-wish_list {
+        position: absolute;
+        top: 120%;
+        left: -170px;
+      }
+    }
+    .sBag {
+      position: relative;
+      .overlay-shopping_bag {
+        position: absolute;
+        top: 120%;
+        left: -160px;
+      }
+    }
+  }
+
+  footer {
+    .socials img {
+      margin-right: 30px;
+    }
+  }
+}

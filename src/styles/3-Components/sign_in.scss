@@ -1,0 +1,132 @@
+.h1-head {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  border-bottom: solid 2px color(gray-2);
+  padding-bottom: 20px;
+}
+
+.sign_in-wrap {
+  max-width: 960px;
+  margin: auto;
+  position: relative;
+
+  .track__line {
+    ul li:nth-child(1)::after {
+      background: black;
+    }
+  }
+
+  .sign_in__form {
+    display: flex;
+    margin: 20px 0;
+    padding: 15px 0;
+
+    .existing_customer {
+      h2 {
+        margin-right: 20px;
+      }
+      p {
+        margin-right: 40px;
+      }
+    }
+
+    .new_customer {
+      border-left: solid 2px color(gray-2);
+      h2 {
+        margin-left: 20px;
+      }
+      p {
+        margin-left: 40px;
+        font-size: 12px;
+        span {
+          text-transform: capitalize;
+          text-decoration: underline;
+        }
+        span:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    div {
+      padding-top: 20px;
+      h2 {
+        text-align: center;
+        border-bottom: solid 1px color(gray-2);
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      p {
+        margin: 20px auto;
+        text-align: center;
+        font-size: 15px;
+      }
+      form {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .form-input {
+          width: 275px;
+          margin-bottom: 20px;
+          height: 34px;
+          padding: 0 10px;
+        }
+
+        a {
+          color: black;
+          text-transform: uppercase;
+          text-decoration: underline;
+          font-size: 12px;
+          margin-bottom: 20px;
+        }
+
+        button {
+          width: 144px;
+          height: 44px;
+          border: none;
+          background: black;
+          color: white;
+          text-transform: uppercase;
+          font-size: 13px;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background: color(gray-2);
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.track__line {
+  margin-top: 20px;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid 1px color(gray-2);
+    padding-bottom: 5px;
+
+    li {
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    li::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: block;
+      position: absolute;
+      background-color: white;
+      border-radius: 100%;
+      border: solid 1px color(gray-2);
+      left: 40%;
+    }
+  }
+}

@@ -1,0 +1,313 @@
+.billing-wrap {
+  max-width: 960px;
+  margin: auto;
+  > h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 45px;
+  }
+  > div {
+    margin-top: 20px;
+    background: color(gray-2);
+  }
+  .track__line {
+    background: none;
+    ul li:nth-child(3)::after {
+      background: black;
+    }
+  }
+
+  .order_summary {
+    .order_list {
+      border-bottom: solid 1px color(gray-3);
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        th {
+          font-size: 13px;
+          font-weight: 400;
+          padding: 15px 0;
+          border-bottom: solid 1px color(gray-3);
+          text-transform: uppercase;
+        }
+        th:nth-child(1) {
+          text-align: start;
+          padding-left: 20px;
+        }
+
+        td {
+          text-align: center;
+          font-size: 13px;
+        }
+
+        .order_item-des {
+          display: flex;
+          margin-left: 20px;
+          padding: 14px 0;
+          img {
+            width: 69px;
+            height: 69px;
+          }
+          .order_item-des-main {
+            max-width: 172px;
+            text-align: start;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .order_totals {
+      display: flex;
+      padding: 20px 16px 20px 16px;
+      justify-content: space-between;
+      a {
+        font-size: 12px;
+        color: black;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+      .order_totals-price {
+        display: flex;
+        font-size: 15px;
+        text-transform: uppercase;
+        p {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+
+  .billing_review {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 14px 20px;
+    h2 {
+      font-size: 17px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 12px;
+    }
+    a {
+      color: black;
+      font-size: 12px;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+
+    .billing_adress {
+      display: flex;
+      flex-direction: column;
+      a {
+        margin-top: auto;
+      }
+    }
+  }
+
+  .delivery-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 14px 20px;
+    h2 {
+      font-size: 17px;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 12px;
+      margin: 15px 0;
+    }
+    a {
+      color: black;
+      font-size: 12px;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+  }
+
+  .payment__form {
+    margin-bottom: 14px;
+    padding: 14px 20px;
+    h2 {
+      font-size: 17px;
+      text-transform: uppercase;
+    }
+    form {
+      display: flex;
+      margin-top: 14px;
+      flex-direction: column;
+      label {
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+      input,
+      select {
+        display: block;
+        height: 34px;
+      }
+
+      .cardName {
+        width: 342px;
+        margin-top: 11px;
+      }
+
+      .cardNumber {
+        display: flex;
+        input {
+          width: 75px;
+          margin-right: 14px;
+          margin-top: 11px;
+        }
+      }
+
+      .expiration-wrap {
+        display: flex;
+        align-items: flex-end;
+        select {
+          margin-top: 11px;
+        }
+
+        input {
+          width: 75px;
+          margin-top: 11px;
+        }
+
+        .exp__months {
+          select {
+            width: 164px;
+          }
+        }
+        .exp__years {
+          margin: auto 15px;
+          select {
+            width: 75px;
+          }
+        }
+      }
+      .card__secure {
+        display: flex;
+        align-items: center;
+        max-width: 342px;
+        input {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  > a {
+    display: flex;
+    margin-bottom: 40px;
+    padding: 14px 20px;
+    max-width: 220px;
+    margin-left: auto;
+    background: black;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all 0.3s ease-in-out;
+    border: solid 1px color(gray-3);
+    font-weight: 600;
+  }
+
+  > a:hover {
+    background-color: color(gray-2);
+    color: black;
+  }
+
+  .card__secure {
+    position: relative;
+    input[type="checkbox"] {
+      visibility: hidden;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background: white;
+      border: solid 1px color(gray-3);
+    }
+
+    .checkmark::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 7px;
+      bottom: 5px;
+      width: 3px;
+      height: 9px;
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  .card__secure input:checked ~ .checkmark::after {
+    display: block;
+  }
+}
+
+.order_summary {
+  .order_list {
+    border-bottom: solid 1px color(gray-3);
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      th {
+        font-size: 13px;
+        font-weight: 400;
+        padding: 15px 0;
+        border-bottom: solid 1px color(gray-3);
+        text-transform: uppercase;
+      }
+      th:nth-child(1) {
+        text-align: start;
+        padding-left: 20px;
+      }
+
+      td {
+        text-align: center;
+        font-size: 13px;
+      }
+
+      .order_item-des {
+        display: flex;
+        margin-left: 20px;
+        padding: 14px 0;
+        img {
+          width: 69px;
+          height: 69px;
+        }
+        .order_item-des-main {
+          max-width: 172px;
+          text-align: start;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .order_totals {
+    display: flex;
+    padding: 20px 16px 20px 16px;
+    justify-content: space-between;
+    a {
+      font-size: 12px;
+      color: black;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+    .order_totals-price {
+      display: flex;
+      font-size: 15px;
+      text-transform: uppercase;
+      p {
+        margin-right: 40px;
+      }
+    }
+  }
+}

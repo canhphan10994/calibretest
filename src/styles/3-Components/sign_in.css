@@ -1,0 +1,138 @@
+.h1-head {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  border-bottom: solid 2px color(gray-2);
+  padding-bottom: 20px;
+}
+
+.sign_in-wrap {
+  max-width: 960px;
+  margin: auto;
+  position: relative;
+}
+
+.sign_in-wrap .track__line ul li:nth-child(1)::after {
+  background: black;
+}
+
+.sign_in-wrap .sign_in__form {
+  display: flex;
+  margin: 20px 0;
+  padding: 15px 0;
+}
+
+.sign_in-wrap .sign_in__form .existing_customer h2 {
+  margin-right: 20px;
+}
+
+.sign_in-wrap .sign_in__form .existing_customer p {
+  margin-right: 40px;
+}
+
+.sign_in-wrap .sign_in__form .new_customer {
+  border-left: solid 2px color(gray-2);
+}
+
+.sign_in-wrap .sign_in__form .new_customer h2 {
+  margin-left: 20px;
+}
+
+.sign_in-wrap .sign_in__form .new_customer p {
+  margin-left: 40px;
+  font-size: 12px;
+}
+
+.sign_in-wrap .sign_in__form .new_customer p span {
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+.sign_in-wrap .sign_in__form .new_customer p span:hover {
+  cursor: pointer;
+}
+
+.sign_in-wrap .sign_in__form div {
+  padding-top: 20px;
+}
+
+.sign_in-wrap .sign_in__form div h2 {
+  text-align: center;
+  border-bottom: solid 1px color(gray-2);
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.sign_in-wrap .sign_in__form div p {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 15px;
+}
+
+.sign_in-wrap .sign_in__form div form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign_in-wrap .sign_in__form div form .form-input {
+  width: 275px;
+  margin-bottom: 20px;
+  height: 34px;
+  padding: 0 10px;
+}
+
+.sign_in-wrap .sign_in__form div form a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.sign_in-wrap .sign_in__form div form button {
+  width: 144px;
+  height: 44px;
+  border: none;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.sign_in-wrap .sign_in__form div form button:hover {
+  background: color(gray-2);
+  color: black;
+}
+
+.track__line {
+  margin-top: 20px;
+}
+
+.track__line ul {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: solid 1px color(gray-2);
+  padding-bottom: 5px;
+}
+
+.track__line ul li {
+  position: relative;
+  text-transform: uppercase;
+}
+
+.track__line ul li::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+  border: solid 1px color(gray-2);
+  left: 40%;
+}

@@ -1,0 +1,158 @@
+$p-14: 14px;
+
+.overlay.showOverlay {
+  opacity: 1;
+  display: block;
+}
+
+.overlay {
+  width: 342px;
+  border: solid color(gray-2) 1px;
+  padding: $p-14;
+  text-transform: uppercase;
+  box-shadow: -5px 5px 5px color(gray-2);
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  display: none;
+  z-index: 9999999;
+
+  h2,
+  .button {
+    margin-bottom: $p-14;
+    text-align: center;
+    a {
+      width: 100%;
+    }
+  }
+
+  .overlay__head {
+    position: relative;
+    .overlay-exit::before {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: color(black);
+      position: absolute;
+      top: 10px;
+      right: 0;
+      transform: rotate(45deg);
+    }
+    .overlay-exit::after {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: color(black);
+      position: absolute;
+      top: 10px;
+      right: 0;
+      transform: rotate(-45deg);
+    }
+    .overlay-exit:hover {
+      cursor: pointer;
+    }
+  }
+
+  .button {
+    border: solid color(gray-3) 1px;
+    max-width: 140px;
+    margin: 10px auto;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 0;
+  }
+
+  .button:hover {
+    background-color: color(gray-3);
+    color: color(white);
+    cursor: pointer;
+  }
+}
+
+/** MY ACCOUNT **/
+
+.overlay-account {
+  ul {
+    padding: $p-14 0;
+    border-bottom: solid color(gray-3) 1px;
+    border-top: solid color(gray-3) 1px;
+
+    li {
+      line-height: 30px;
+      font-size: 15px;
+      a::after {
+        content: "";
+        height: 8px;
+        width: 8px;
+        opacity: 0;
+        position: absolute;
+        background: color(black);
+        border-radius: 50%;
+      }
+
+      a:hover {
+        cursor: pointer;
+      }
+
+      a:hover::after {
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.overlay-account::before {
+  content: "";
+  height: 8px;
+  width: 10px;
+  background: color(white);
+  position: absolute;
+  bottom: 100%;
+  right: 25%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/** WISH LIST **/
+
+.overlay-wish_list {
+  p {
+    padding: $p-14 0;
+    border-bottom: solid color(gray-3) 1px;
+    border-top: solid color(gray-3) 1px;
+    font-size: 15px;
+    text-transform: none;
+  }
+}
+
+.overlay-wish_list::before {
+  content: "";
+  height: 8px;
+  width: 10px;
+  background: color(white);
+  position: absolute;
+  bottom: 100%;
+  right: 50px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* SHOPPING BAG */
+
+.overlay-shopping_bag {
+  p {
+    padding: $p-14 0;
+    border-top: solid color(gray-3) 1px;
+    font-size: 15px;
+    text-transform: none;
+  }
+}
+
+.overlay-shopping_bag::before {
+  content: "";
+  height: 8px;
+  width: 10px;
+  background: color(white);
+  position: absolute;
+  bottom: 100%;
+  right: 20px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}

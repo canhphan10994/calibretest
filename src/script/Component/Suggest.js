@@ -6,7 +6,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 let Recommendation = function(props) {
   const options = {
     items: 4,
-    margin: 40,
+    margin: 20,
     dots: false
   };
   return (
@@ -47,8 +47,8 @@ let Recommendation = function(props) {
 
 let Recently = function(props) {
   const options = {
-    items: 6,
-    margin: 40,
+    items: 5,
+    margin: 20,
     dots: false
   };
 

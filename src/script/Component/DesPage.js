@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import TopNav from "./TopNav";
 import Menu from "./Navigation";
 import Product from "./ProductInfor";
@@ -14,7 +14,7 @@ import { ProductProvider } from "./ProductContext";
 import { BagProvider } from "./BagStore";
 import { BillProvider } from "./BillingData";
 import { ButtonProvider } from "./LayoutProvider";
-import { AccountProvider, AccountContext } from "./AccountProvider";
+import { AccountProvider } from "./AccountProvider";
 
 class DesPage extends React.Component {
   constructor(props) {

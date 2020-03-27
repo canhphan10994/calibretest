@@ -1,0 +1,28 @@
+@mixin xLarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@include xLarge {
+  .overlay {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+  }
+
+  .productInformation__adding {
+    font-size: 15px;
+  }
+  .productInformation__more {
+    h3,
+    a,
+    p {
+      font-size: 15px;
+    }
+  }
+
+  footer {
+    padding: 41px 220px;
+  }
+}

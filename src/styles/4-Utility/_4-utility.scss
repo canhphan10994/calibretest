@@ -1,9 +1,5 @@
-.overlay {
-  position: absolute;
-  top: 20%;
-  left: 30%;
-}
-
-body {
-  background-color: #cccccc;
-}
+@import "xSmall";
+@import "small";
+@import "medium";
+@import "large";
+@import "xLarge";

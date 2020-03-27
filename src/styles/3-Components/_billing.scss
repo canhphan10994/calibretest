@@ -31,7 +31,6 @@
           text-transform: uppercase;
         }
         th:nth-child(1) {
-          text-align: start;
           padding-left: 20px;
         }
 
@@ -41,17 +40,11 @@
         }
 
         .order_item-des {
-          display: flex;
           margin-left: 20px;
           padding: 14px 0;
           img {
             width: 69px;
             height: 69px;
-          }
-          .order_item-des-main {
-            max-width: 172px;
-            text-align: start;
-            margin-left: 10px;
           }
         }
       }
@@ -159,43 +152,52 @@
           margin-right: 14px;
           margin-top: 11px;
         }
-      }
-
-      .expiration-wrap {
-        display: flex;
-        align-items: flex-end;
-        select {
-          margin-top: 11px;
-        }
-
-        input {
-          width: 75px;
-          margin-top: 11px;
-        }
-
-        .exp__months {
-          select {
-            width: 164px;
-          }
-        }
-        .exp__years {
-          margin: auto 15px;
-          select {
-            width: 75px;
-          }
-        }
-      }
-      .card__secure {
-        display: flex;
-        align-items: center;
-        max-width: 342px;
-        input {
-          margin-right: 30px;
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none !important;
+          margin: 0 !important;
         }
       }
     }
-  }
 
+    .expiration-wrap {
+      display: flex;
+      align-items: flex-end;
+      select {
+        margin-top: 11px;
+      }
+
+      input {
+        width: 75px;
+        margin-top: 11px;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0 !important;
+      }
+
+      .exp__months {
+        select {
+          width: 164px;
+        }
+      }
+      .exp__years {
+        margin: auto 15px;
+        select {
+          width: 75px;
+        }
+      }
+    }
+    .card__secure {
+      display: flex;
+      align-items: center;
+      max-width: 342px;
+      input {
+        margin-right: 30px;
+      }
+    }
+  }
   > a {
     display: flex;
     margin-bottom: 40px;
@@ -216,40 +218,40 @@
     background-color: color(gray-2);
     color: black;
   }
+}
 
-  .card__secure {
-    position: relative;
-    input[type="checkbox"] {
-      visibility: hidden;
-    }
-
-    .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 20px;
-      width: 20px;
-      background: white;
-      border: solid 1px color(gray-3);
-    }
-
-    .checkmark::after {
-      content: "";
-      position: absolute;
-      display: none;
-      left: 7px;
-      bottom: 5px;
-      width: 3px;
-      height: 9px;
-      border: solid black;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-    }
+.card__secure {
+  position: relative;
+  input[type="checkbox"] {
+    visibility: hidden;
   }
 
-  .card__secure input:checked ~ .checkmark::after {
-    display: block;
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: white;
+    border: solid 1px color(gray-3);
   }
+
+  .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    bottom: 5px;
+    width: 3px;
+    height: 9px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.card__secure input:checked ~ .checkmark::after {
+  display: block;
 }
 
 .order_summary {
@@ -265,10 +267,6 @@
         border-bottom: solid 1px color(gray-3);
         text-transform: uppercase;
       }
-      th:nth-child(1) {
-        text-align: start;
-        padding-left: 20px;
-      }
 
       td {
         text-align: center;
@@ -276,17 +274,11 @@
       }
 
       .order_item-des {
-        display: flex;
         margin-left: 20px;
         padding: 14px 0;
         img {
           width: 69px;
           height: 69px;
-        }
-        .order_item-des-main {
-          max-width: 172px;
-          text-align: start;
-          margin-left: 10px;
         }
       }
     }

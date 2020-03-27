@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { ProductContext } from "./ProductContext";
-import { ButtonProvider } from "./LayoutProvider";
 import { AddToBag } from "./AddToBag";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -19,7 +18,7 @@ const Infor = props => {
       e.target.childNodes[1].textContent = "-";
     }
 
-    if (textElement == "+") {
+    if (textElement === "+") {
       for (let i = 0; i < spanList.length; i++) {
         spanList[i].textContent = "+";
       }

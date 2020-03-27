@@ -1,11 +1,10 @@
-import React, { useState, createContext, useContext } from "react";
-import { BagStoreContext } from "./BagStore";
+import React, { useState, createContext } from "react";
 
 export const ButtonContext = createContext();
 
 export const ButtonProvider = props => {
   const [styleButton, setStyleButton] = useState({
-    img: "./img/Bag AA.png",
+    img: "./img/bagicon.svg",
     disableEvent: {}
   });
 

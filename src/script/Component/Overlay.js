@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AccountContext } from "./AccountProvider";
 
-let clickExit = function(e) {
+const clickExit = function(e) {
   let listOverlay = document.querySelectorAll(".overlay");
   for (let i = 0; i < 3; i++) {
     listOverlay[i].classList.remove("showOverlay");
@@ -9,6 +10,11 @@ let clickExit = function(e) {
 };
 
 let MyAccountOverlay = function(props) {
+  const [account, setAccount] = useContext(AccountContext);
+  const signOut = () => {
+    setAccount({ ...account, isLogged: false });
+    clickExit();
+  };
   return (
     <div className="overlay overlay-account bg-white">
       <div className="overlay__head">
@@ -17,7 +23,15 @@ let MyAccountOverlay = function(props) {
       </div>
       <ul>
         <li>
-          <a>my orders</a>
+          {account.isLogged ? (
+            <Link to="/bag" onClick={clickExit}>
+              my orders
+            </Link>
+          ) : (
+            <Link to="/signin" onClick={clickExit}>
+              my orders
+            </Link>
+          )}
         </li>
         <li>
           <a>my gift cards</a>
@@ -30,7 +44,15 @@ let MyAccountOverlay = function(props) {
         </li>
       </ul>
       <div className="button">
-        <Link to="/signin">sign in</Link>
+        {!account.isLogged ? (
+          <Link to="/signin" onClick={clickExit}>
+            sign in
+          </Link>
+        ) : (
+          <Link to="/" onClick={signOut}>
+            sign out
+          </Link>
+        )}
       </div>
     </div>
   );

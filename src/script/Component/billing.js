@@ -1,63 +1,160 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import { TrackLine } from "./Other";
 import { BillingContext } from "./BillingData";
 import { AccountContext } from "./AccountProvider";
 
-let PaymentForm = props => (
-  <div className="payment__form">
-    <h2>payment method</h2>
-    <form>
-      <label>
-        cardholder name
-        <input className="cardName" type="text" />
-      </label>
-      <label>
-        card number
-        <div className="cardNumber">
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
-        </div>
-      </label>
-      <div className="expiration-wrap">
-        <label className="exp__months">
-          expiration date
-          <select>
-            <option>Month</option>
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
-          </select>
-        </label>
-        <label className="exp__years">
-          <select>
-            <option>Year</option>
-          </select>
+let PaymentForm = ({ bill, setBill }) => {
+  const cardInfor = bill.cardInfor;
+  const updateCardHolder = e => {
+    setBill({
+      ...bill,
+      cardInfor: { ...cardInfor, cardHolder: e.target.value }
+    });
+  };
+  const updateCardNumber1 = e => {
+    if (e.target.value < 10000) {
+      setBill({
+        ...bill,
+        cardInfor: { ...cardInfor, cardNumber1: e.target.value }
+      });
+    }
+  };
+  const updateCardNumber2 = e => {
+    if (e.target.value < 10000) {
+      setBill({
+        ...bill,
+        cardInfor: { ...cardInfor, cardNumber2: e.target.value }
+      });
+    }
+  };
+  const updateCardNumber3 = e => {
+    if (e.target.value < 10000) {
+      setBill({
+        ...bill,
+        cardInfor: { ...cardInfor, cardNumber3: e.target.value }
+      });
+    }
+  };
+  const updateCardNumber4 = e => {
+    if (e.target.value < 10000) {
+      setBill({
+        ...bill,
+        cardInfor: { ...cardInfor, cardNumber4: e.target.value }
+      });
+    }
+  };
+  const updateCardExpYears = e => {
+    setBill({
+      ...bill,
+      cardInfor: { ...cardInfor, cardExpYears: e.target.value }
+    });
+  };
+  const updateCardExpMonth = e => {
+    setBill({
+      ...bill,
+      cardInfor: { ...cardInfor, cardExpMonth: e.target.value }
+    });
+  };
+  const updateCardCvv = e => {
+    if (e.target.value < 1000) {
+      setBill({
+        ...bill,
+        cardInfor: { ...cardInfor, cardCvv: e.target.value }
+      });
+    }
+  };
+
+  return (
+    <div className="payment__form">
+      <h2>payment method</h2>
+      <form>
+        <label>
+          cardholder name
+          <input
+            className="cardName"
+            type="text"
+            value={bill.cardInfor.cardHolder}
+            onChange={updateCardHolder}
+          />
         </label>
         <label>
-          CVV
-          <input type="text" />
+          card number
+          <div className="cardNumber">
+            <input
+              type="number"
+              value={bill.cardInfor.cardNumber1}
+              onChange={updateCardNumber1}
+            />
+            <input
+              type="number"
+              value={bill.cardInfor.cardNumber2}
+              onChange={updateCardNumber2}
+            />
+            <input
+              type="number"
+              value={bill.cardInfor.cardNumber3}
+              onChange={updateCardNumber3}
+            />
+            <input
+              type="number"
+              value={bill.cardInfor.cardNumber4}
+              onChange={updateCardNumber4}
+            />
+          </div>
         </label>
-      </div>
-      <label className="card__secure">
-        <input type="checkbox" />
-        <span className="checkmark"></span>
-        Securely store payment details for next purchase.
-      </label>
-    </form>
-  </div>
-);
+        <div className="expiration-wrap">
+          <label className="exp__months">
+            expiration date
+            <select
+              value={bill.cardInfor.cardExpMonth}
+              onChange={updateCardExpMonth}
+            >
+              <option>Month</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+          </label>
+          <label className="exp__years">
+            <select
+              value={bill.cardInfor.cardExpYears}
+              onChange={updateCardExpYears}
+            >
+              <option>Year</option>
+              <option>2020</option>
+              <option>2021</option>
+              <option>2022</option>
+            </select>
+          </label>
+          <label>
+            CVV
+            <input
+              type="number"
+              value={bill.cardInfor.cardCvv}
+              onChange={updateCardCvv}
+            />
+          </label>
+        </div>
+        <label className="card__secure">
+          <input type="checkbox" />
+          <span className="checkmark"></span>
+          Securely store payment details for next purchase.
+        </label>
+      </form>
+    </div>
+  );
+};
 
 let DeliveryMehod = props => (
   <div className="delivery-wrap">
@@ -143,11 +240,69 @@ export const OrderSummary = ({ bill }) => {
 };
 
 const Billing = props => {
-  const [bill] = useContext(BillingContext);
+  const [isFilled, setIsFilled] = useState(false);
+  const [bill, setBill] = useContext(BillingContext);
   const [account] = useContext(AccountContext);
+  useEffect(() => {
+    setIsFilled(true);
+    for (const item in bill.cardInfor) {
+      switch (item) {
+        case "cardHolder":
+          if (bill.cardInfor[item].length < 1) {
+            setIsFilled(false);
+            break;
+          }
+          break;
+        case "cardNumber1":
+          if (bill.cardInfor[item].length < 4) {
+            setIsFilled(false);
+            break;
+          }
+          break;
+        case "cardNumber2":
+          if (bill.cardInfor[item].length < 4) {
+            setIsFilled(false);
+            break;
+          }
+          break;
+        case "cardNumber3":
+          if (bill.cardInfor[item].length < 4) {
+            setIsFilled(false);
+            break;
+          }
+          break;
+        case "cardNumber4":
+          if (bill.cardInfor[item].length < 4) {
+            setIsFilled(false);
+            break;
+          }
+          break;
+        case "cardExpYears":
+          if (bill.cardInfor[item].length < 1) {
+            setIsFilled(false);
+            break;
+          }
+          break;
+        case "cardExpMonth":
+          if (bill.cardInfor[item].length < 1) {
+            setIsFilled(false);
+            break;
+          }
+          break;
+        case "cardCvv":
+          if (bill.cardInfor[item].length < 3) {
+            setIsFilled(false);
+            break;
+          }
+          break;
+      }
+    }
+  }, [bill]);
+
   if (!account.isLogged) {
     return <Redirect to="/" />;
   }
+
   return (
     <div className="billing-wrap">
       <h1 className="h1-head">billing</h1>
@@ -159,8 +314,17 @@ const Billing = props => {
       <h2>3. delivery method</h2>
       <DeliveryMehod />
       <h2>4. payment details</h2>
-      <PaymentForm />
-      <a href="#">complete purchase</a>
+      <PaymentForm bill={bill} setBill={setBill} />
+      {isFilled ? (
+        <Link to="/confirm">complete purchase</Link>
+      ) : (
+        <Link
+          style={{ pointerEvents: "none", backgroundColor: "#eeee" }}
+          to="/confirm"
+        >
+          complete purchase
+        </Link>
+      )}
     </div>
   );
 };

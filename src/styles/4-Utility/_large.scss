@@ -1,0 +1,104 @@
+@mixin large {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@include large {
+  //nav
+  .nav-new_arrivals {
+    .nav__main {
+      .nav__main-side {
+        img {
+          width: 188px;
+          height: 192px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    img {
+      width: 188px;
+      height: 192px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .nav-mens {
+    .nav__head {
+      margin-right: 60px;
+    }
+    .nav__main {
+      .nav__main-side {
+        img {
+          width: 188px;
+          height: 192px;
+        }
+      }
+
+      img {
+        width: 188px;
+        height: 192px;
+      }
+    }
+  }
+  .nav-womens {
+    .nav__head {
+      margin-left: 20px;
+    }
+    .nav__main {
+      .nav__main-side {
+        img {
+          width: 188px;
+          height: 192px;
+        }
+      }
+
+      img {
+        width: 188px;
+        height: 192px;
+      }
+    }
+  }
+
+  .nav-accessories {
+    .nav__head {
+      margin-left: 20px;
+    }
+    .nav__main {
+      .nav__main-side {
+        img {
+          width: 188px;
+          height: 192px;
+        }
+      }
+
+      img {
+        width: 188px;
+        height: 192px;
+      }
+    }
+  }
+
+  .nav-brands {
+    grid-template-areas:
+      ". head . ."
+      "main main main main";
+    .nav__head {
+      margin-left: 42px;
+    }
+    .nav__item {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .product-wrap {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}

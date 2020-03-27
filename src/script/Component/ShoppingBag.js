@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { ButtonContext } from "./LayoutProvider";
 import { Button } from "./Other";
 import { BagStoreContext } from "./BagStore";
@@ -42,22 +42,22 @@ let ProductDes = ({
 
   return (
     <tr className="product">
-      <td>
+      <td className="product__image">
         <img src={"./img/" + img} alt="item" />
       </td>
-      <td>
+      <td className="product__description-wrap">
         <div className="product__description">
           <h4>{name}</h4>
           <p>{infor}</p>
         </div>
       </td>
-      <td>{colour}</td>
+      <td className="product__color">{colour}</td>
       <td className="product__quantity">
         <p onClick={Subt}>-</p>
         <p>{quantity}</p>
         <p onClick={Add}>+</p>
       </td>
-      <td>${uPrice}</td>
+      <td className="product__price">${uPrice}</td>
     </tr>
   );
 };
@@ -140,14 +140,24 @@ const ShoppingBag = props => {
   return (
     <div className="shoppingBag">
       <h1>shopping</h1>
-      {account.isLogged ? <Button rUrl="/ship" /> : <Button rUrl="/signin" />}
+      {account.isLogged ? (
+        productsList.length > 0 ? (
+          <Button content="buy now" rUrl="/ship" />
+        ) : (
+          <Button content="back" rUrl="/" />
+        )
+      ) : productsList.length > 0 ? (
+        <Button content="buy now" rUrl="/signin" />
+      ) : (
+        <Button content="back" rUrl="/" />
+      )}
       <div className="productList">
         <ProductList />
       </div>
       <div className="bagSum-wrap">
         <div className="bagSum">
           <p>subtotal</p>
-          <p>{subTotal}</p>
+          <p>${subTotal}</p>
         </div>
         <div className="bagSum">
           <p>shipping</p>
@@ -159,9 +169,19 @@ const ShoppingBag = props => {
         </div>
         <div className="bagSum bagSum-total">
           <p>total</p>
-          <p>{subTotal}</p>
+          <p>${subTotal}</p>
         </div>
-        {account.isLogged ? <Button rUrl="/ship" /> : <Button rUrl="/signin" />}
+        {account.isLogged ? (
+          productsList.length > 0 ? (
+            <Button content="buy now" rUrl="/ship" />
+          ) : (
+            <Button content="back" rUrl="/" />
+          )
+        ) : productsList.length > 0 ? (
+          <Button content="buy now" rUrl="/signin" />
+        ) : (
+          <Button content="back" rUrl="/" />
+        )}
       </div>
       <div className="help">
         <p>

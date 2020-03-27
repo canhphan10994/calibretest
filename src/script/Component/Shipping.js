@@ -1,9 +1,64 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Redirect } from "react-router";
 import { TrackLine, Button } from "./Other";
 import { BillingContext } from "./BillingData";
+import { AccountContext } from "./AccountProvider";
 
 const Shipping = props => {
+  const [isFilled, setIsFilled] = useState(false);
   const [bill, setBill] = useContext(BillingContext);
+  const [account] = useContext(AccountContext);
+
+  useEffect(() => {
+    setIsFilled(true);
+    for (const item in bill) {
+      if (typeof bill[item] === "string") {
+        switch (item) {
+          case "title":
+            if (!bill[item].length > 0) {
+              setIsFilled(false);
+              break;
+            }
+            break;
+          case "firstName":
+            if (!bill[item].length > 0) {
+              setIsFilled(false);
+            }
+            break;
+          case "lastName":
+            if (!bill[item].length > 0) {
+              setIsFilled(false);
+            }
+            break;
+          case "address1":
+            if (!bill[item].length > 0) {
+              setIsFilled(false);
+            }
+            break;
+          case "city":
+            if (!bill[item].length > 0) {
+              setIsFilled(false);
+            }
+            break;
+          case "county":
+            if (!bill[item].length > 0) {
+              setIsFilled(false);
+            }
+            break;
+          case "zip":
+            if (!bill[item].length > 0) {
+              setIsFilled(false);
+            }
+            break;
+          case "telephone":
+            if (!bill[item].length > 0) {
+              setIsFilled(false);
+            }
+            break;
+        }
+      }
+    }
+  }, [bill]);
 
   const updateTitle = e => {
     setBill({ ...bill, title: e.target.value });
@@ -42,12 +97,22 @@ const Shipping = props => {
   const updateShippingAddress = e => {
     setBill({ ...bill, shippingAddress: e.target.value });
   };
-
+  if (!account.isLogged) {
+    return <Redirect to="/" />;
+  }
   return (
     <div className="shipping-wrap">
       <h1 className="h1-head">shipping</h1>
       <TrackLine />
-      <Button rUrl="/billing" />
+      {isFilled ? (
+        <Button content="buy now" rUrl="/billing" />
+      ) : (
+        <Button
+          style={{ pointerEvents: "none", backgroundColor: "#eeee" }}
+          content="buy now"
+          rUrl="/billing"
+        />
+      )}
       <div className="shipping__main">
         <div className="shipping-form">
           <form>
@@ -184,7 +249,15 @@ const Shipping = props => {
           </div>
         </div>
       </div>
-      <Button rUrl="/billing" />
+      {isFilled ? (
+        <Button content="buy now" rUrl="/billing" />
+      ) : (
+        <Button
+          style={{ pointerEvents: "none", backgroundColor: "#eeee" }}
+          content="buy now"
+          rUrl="/billing"
+        />
+      )}
     </div>
   );
 };

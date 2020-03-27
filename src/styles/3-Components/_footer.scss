@@ -1,0 +1,62 @@
+footer {
+  background: color(gray-2);
+  display: grid;
+  text-transform: uppercase;
+
+  .footer__address {
+    grid-area: address;
+    h3 {
+      font-size: 15px;
+      margin-bottom: 23px;
+    }
+  }
+
+  .footer__links {
+    grid-area: links;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-height: 167px;
+      a {
+        color: black;
+        line-height: 25px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .footer__contact {
+    grid-area: contact;
+
+    form {
+      margin: 15px 0 40px 0;
+      input {
+        display: block;
+        margin-bottom: 15px;
+        padding: 9px;
+      }
+
+      a {
+        color: black;
+        border: solid black 1px;
+        padding: 5px 20px;
+        font-size: 13px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      a:hover {
+        background-color: black;
+        color: white;
+      }
+
+      .socials {
+        img {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

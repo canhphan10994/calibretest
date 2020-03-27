@@ -12,7 +12,6 @@
   .shipping__main {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
   }
   .shipping-form {
     text-transform: uppercase;
@@ -56,6 +55,7 @@
     background: #eeee;
     margin-left: 40px;
     text-align: center;
+    display: none;
     h4 {
       padding: 18px;
       border-bottom: solid 3px color(gray-2);

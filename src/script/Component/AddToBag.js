@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { BagStoreContext } from "./BagStore";
 import { ButtonContext } from "./LayoutProvider";
 

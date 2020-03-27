@@ -16,10 +16,20 @@ export const BillProvider = props => {
     zip: "",
     telephone: "",
     mobile: "",
-    shippingAddress: "false",
+    shippingAddress: false,
     subTotal: 0,
     totals: 0,
-    shippingFee: 0
+    shippingFee: 0,
+    cardInfor: {
+      cardHolder: "",
+      cardNumber1: "",
+      cardNumber2: "",
+      cardNumber3: "",
+      cardNumber4: "",
+      cardExpYears: "",
+      cardExpMonth: "",
+      cardCvv: ""
+    }
   });
 
   return (

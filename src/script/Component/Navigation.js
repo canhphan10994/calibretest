@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AccountContext } from "./AccountProvider";
 
 let NewArrivals = function(props) {
   return (
@@ -368,6 +370,40 @@ let NavBaselWorld = function(props) {
   );
 };
 
+const NavAccount = ({ navOut }) => {
+  const [account, setAccount] = useContext(AccountContext);
+
+  return (
+    <div className="nav nav-womens bg-gray-2">
+      <div className="nav__head">
+        <h4>Account</h4>
+      </div>
+      <div className="nav__main">
+        <div className="nav-links">
+          <ul>
+            <li>
+              <Link to="/bag" onClick={navOut}>
+                My Order
+              </Link>
+            </li>
+            <li>
+              {!account.isLogged ? (
+                <Link to="/signin" onClick={navOut}>
+                  sign in
+                </Link>
+              ) : (
+                <Link to="/" onClick={navOut}>
+                  sign out
+                </Link>
+              )}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 /* MENU */
 
 class Menu extends React.Component {
@@ -396,30 +432,54 @@ class Menu extends React.Component {
     switch (arg) {
       case "new arrivals":
         return <NewArrivals />;
-        break;
+
       case "brands":
         return <NavBrands />;
-        break;
+
       case "men's":
         return <NavMens />;
-        break;
+
       case "women's":
         return <NavWomens />;
-        break;
+
       case "accessories":
         return <NavAccessories />;
-        break;
+
       case "baselworld":
         return <NavBaselWorld />;
-        break;
+      case "account":
+        return <NavAccount navOut={this.navOut} />;
     }
   }
 
   render() {
     return (
-      <div onMouseLeave={this.navOut}>
+      <div className="menu-wrap" onMouseLeave={this.navOut}>
+        <input type="checkbox" className="toggler" onClick={this.navOut} />
+        <div className="hamburger">
+          <div></div>
+        </div>
+
         <nav className="menu">
           <ul>
+            <li className="menu-top">
+              <a href="#" onMouseEnter={this.navHandle}>
+                <img src="./img/accounticonwhite.svg" alt="account icon" />
+                account
+              </a>
+            </li>
+            <li className="menu-top">
+              <a href="#">
+                <img src="./img/hearticonwhite.svg" alt="wish list icon" />
+                wish list
+              </a>
+            </li>
+            <li className="menu-top">
+              <Link to="/bag">
+                <img src="./img/bagiconwhite.svg" alt="shopping bag icon" />
+                bag
+              </Link>
+            </li>
             <li>
               <a href="#" onMouseEnter={this.navHandle}>
                 new arrivals

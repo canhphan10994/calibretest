@@ -1,4 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
+import { Redirect } from "react-router";
 import { AccountContext } from "./AccountProvider";
 import { BillingContext } from "./BillingData";
 import { Link } from "react-router-dom";
@@ -23,7 +24,10 @@ const SignIn = props => {
 
   const updatePath = props => {
     props.preventDefault();
-    if (exAccount.id == account.id && exAccount.password == account.password) {
+    if (
+      exAccount.id === account.id &&
+      exAccount.password === account.password
+    ) {
       if (bill.productList.length > 0) {
         setPath("/ship");
       } else {
@@ -35,10 +39,17 @@ const SignIn = props => {
   };
 
   const checkLogged = () => {
-    if (exAccount.id == account.id && exAccount.password == account.password) {
+    if (
+      exAccount.id === account.id &&
+      exAccount.password === account.password
+    ) {
       setAccount({ ...account, isLogged: true });
     }
   };
+
+  if (account.isLogged) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div className="sign_in-wrap">
@@ -62,7 +73,7 @@ const SignIn = props => {
             <input
               className="form-input"
               placeholder="Password"
-              type="text"
+              type="password"
               value={exAccount.password}
               onChange={updateExPass}
             />
@@ -75,7 +86,7 @@ const SignIn = props => {
           </form>
         </div>
         <div className="new_customer">
-          <h2>existing customer</h2>
+          <h2>new customer</h2>
           <p>
             You’ll need an account to purchase watches, track and review orders,
             and manage your personal details.
@@ -90,7 +101,9 @@ const SignIn = props => {
               type="text"
             />
 
-            <button type="submit">register</button>
+            <button type="submit" style={{ pointerEvents: "none" }}>
+              register
+            </button>
             <p>
               By registering you agree to our <span>Terms and Conditions</span>{" "}
               and <span>Privacy Policy.</span>

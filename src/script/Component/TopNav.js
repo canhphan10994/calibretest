@@ -37,7 +37,7 @@ let TopSide = function(props) {
     <div className="topSide">
       <div className="mAccount">
         <img
-          src="./img/Bag AA-1.png"
+          src="./img/accounticon.svg"
           alt="account icon"
           onClick={clickOverlay}
         />
@@ -45,7 +45,7 @@ let TopSide = function(props) {
       </div>
       <div className="wList">
         <img
-          src="./img/star_border_24px_outlined.png"
+          src="./img/hearticon.svg"
           alt="wish list icon"
           onClick={clickOverlay}
         />
@@ -53,8 +53,7 @@ let TopSide = function(props) {
       </div>
       <Link to="/bag">
         <div className="sBag">
-          <img src="./img/Bag AA-1.png" alt="shopping bag icon" />
-          <ShoppingBagOverlay />
+          <img src="./img/bagicon.svg" alt="shopping bag icon" />
         </div>
       </Link>
     </div>

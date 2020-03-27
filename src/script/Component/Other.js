@@ -1,11 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BillingContext } from "./BillingData";
 import { BagStoreContext } from "./BagStore";
 
 export const TrackLine = props => {
-  const [bill, setBill] = useContext(BillingContext);
-
   return (
     <div className="track__line">
       <ul>
@@ -48,8 +46,8 @@ export const Button = props => {
   return (
     <div className="button">
       <img src="./img/gavel_24px_outlined.svg" alt="wallet" />
-      <Link to={props.rUrl} onClick={updateBill}>
-        buy now
+      <Link style={props.style} to={props.rUrl} onClick={updateBill}>
+        {props.content}
       </Link>
     </div>
   );

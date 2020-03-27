@@ -18,7 +18,6 @@
   }
 
   .sign_in__form {
-    display: flex;
     margin: 20px 0;
     padding: 15px 0;
 
@@ -32,13 +31,9 @@
     }
 
     .new_customer {
-      border-left: solid 2px color(gray-2);
-      h2 {
-        margin-left: 20px;
-      }
       p {
         margin-left: 40px;
-        font-size: 12px;
+        font-size: 15px;
         span {
           text-transform: capitalize;
           text-decoration: underline;
